@@ -22,7 +22,7 @@ export const displayPost = (id, postData) => {
     }</p>`
   );
 
-  let comments = $(`<ul>Comments:</ul>`);
+  let comments = $(`<ul><b>Comments:</b></ul>`);
 
   if (postData.comments) {
     Object.keys(postData.comments).forEach((id) => {
@@ -31,6 +31,8 @@ export const displayPost = (id, postData) => {
         $(`<li><span>${comment.author} says:</span><p>${comment.body}</p></li>`)
       );
     });
+  } else if (!postData.comments) {
+    comments.append($("<p>No comments</p>"));
   }
 
   postComponent.append(postTitle, author, postDetails, comments);

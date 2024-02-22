@@ -15,16 +15,16 @@ export async function getPosts() {
   return data;
 }
 
-// export async function postProduct(productData) {
-//   const { description, image, inventory, name, price } = productData;
-//   //check if all parameter is ok.
-//   const url = BASE_URI + ".json";
-//   const options = {
-//     method: "POST",
-//     headers,
-//     body: JSON.stringify(productData),
-//   };
-//   const res = await fetch(url, options);
-//   const data = await res.json();
-//   return data;
-// }
+export async function postPost(postData) {
+  postData = { author, title, body, subject, comments: author, body };
+  //check if all parameter is ok.
+  const url = BASE_URI + ".json";
+  const options = {
+    method: "POST",
+    headers,
+    body: JSON.stringify(productData),
+  };
+  const res = await fetch(url, options);
+  const data = await res.json();
+  return data;
+}
